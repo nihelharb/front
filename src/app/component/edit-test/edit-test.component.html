@@ -1,0 +1,46 @@
+<head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<div class="col-md-6">
+  <h2 class="text-center">Edit User</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <label for="nom">nom:</label>
+            <input type="text" formControlName="nom"  name="nom" class="form-control" id="nom" >
+          </div>
+      
+          <div class="form-group">
+            <label for="URL">URL :</label>
+            <input formControlName="url"  name="URL" class="form-control" id="URL">
+          </div>
+      
+          <div class="form-group">
+            <label for="Parametre">Parametre:</label>
+            <input formControlName="parametre"  name="Parametre" class="form-control" id="Parametre">
+          </div>
+
+          <div class="form-group">
+              <label for="temps-rep">temps-rep:</label>
+              <input formControlName="temps_rep"  name="temps-rep" class="form-control" id="tempsrep">
+            </div>
+
+          <div class="form-group">
+              <label for="resultat-attendu">resultat-attendu:</label>
+              <input  formControlName="resultat_attendu" name="resultat-attendu" class="form-control" id="resultatattendu">
+            </div>
+
+            <div class="form-group">
+                <label for="emails">emails:</label>
+                <input formControlName="emails" name="emails" class="form-control" id="emails">
+              </div>
+
+
+          <button class="btn btn-success">Update</button>
+        </form>
+
+        <router-outlet></router-outlet>
+      </div>
+      

@@ -1,0 +1,43 @@
+
+<head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div >
+  <h2> Test Details</h2>
+  
+  <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">nom</th>
+      <th>URL</th>
+      <th>parametre</th>
+      <th>temps_rep</th>      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let test of tests| async"  >
+      <td class="hidden">{{test.nom}}</td>
+      <td>{{test.url}}</td>
+      <td>{{test.parametre}}</td>
+      <td>{{test.temps_rep}}</td>
+
+      <td>
+        <button class="btn btn-danger" (click)="deletetest(test)"> Delete</button>&nbsp;
+      
+      
+        <a routerLink="edit" (click)="editTest(test)"  class="btn btn-danger" role="button" routerLinkActive="active">Edit</a>&nbsp;
+       
+        <button class="btn btn-danger" (click)="Lancer(test)"> Lancer</button>&nbsp;
+
+
+        <!--button routerLink="edit" class="btn btn-danger" (click)="editTest(test)" style="margin-left: 20px;"> Edit</button-->
+      </td>
+    </tr>
+    <router-outlet></router-outlet>
+
+    </tbody>
+  </table>
+</div>

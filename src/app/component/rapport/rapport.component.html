@@ -1,0 +1,45 @@
+<head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    
+    <h3>list historique</h3>
+    <div style="width: 300px;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="dateD">DATE_Debut</label>
+          <input type="text" placeholder="yyyy-MM-dd" class="form-control" id="dateD" required [(ngModel)]="dateD" name="dateD">
+        </div>
+        <div class="form-group">
+                <label for="dateF">DATE_Fin</label>
+                <input type="text" placeholder="yyyy-MM-dd" class="form-control" id="dateF" required [(ngModel)]="dateF" name="dateF">
+         </div>
+              <div class="form-group">
+             <label for="nom">Nom</label>
+            <input type="text" placeholder="testN" class="form-control" id="nom" required [(ngModel)]="nom" name="nom">
+      </div>  
+    
+        <div class="btn-group">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+    <table class="table table-striped">
+        <thead>
+     
+        </thead>
+        <tbody>
+  
+     <td>
+     <tr *ngFor="let r of rapport let i=index ">
+        <td> {{myArray[i]}}     : {{r}}</td>   
+      </tr>
+    </td>
+        </tbody>
+      <router-outlet></router-outlet>
+  
+    
+    </table>
+    
+    
+    

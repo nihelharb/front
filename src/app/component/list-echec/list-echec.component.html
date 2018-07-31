@@ -1,0 +1,47 @@
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<h3>list echec tests</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="date">DATE</label>
+      <input type="text" placeholder="yyyy-MM-dd" class="form-control" id="date" required [(ngModel)]="date" name="date">
+    </div>
+ 
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th class="hidden">nom</th>
+        <th>URL</th>
+        <th>Date</th>
+        <th>temps_rep_reel</th>    
+        <th>resultat</th>    
+
+      </tr>
+  </thead>
+  <tbody>
+ <tr *ngFor="let historique of hist"  >
+    <td class="hidden">{{historique.nom}}</td>
+    <td>{{historique.url}}</td>
+    <td>{{historique.date}}</td>
+    <td>{{historique.temps_rep_reel}}</td>
+    <td>{{historique.resultat}}</td>
+    <td>
+    <button class="btn btn-danger" (click)="EnvoyerEmail"> envoyer un email d'echec</button>&nbsp;
+  </td>
+  </tr>
+  <router-outlet></router-outlet>
+</tbody>
+
+</table>
+
+
