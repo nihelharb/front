@@ -11,6 +11,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { UrlPermission } from './urlPermission/url.permission';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { LunchTestComponent } from './component/lunch-test/lunch-test.component';
 
 const routes: Routes = [
  
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'manager', component: ManagerComponent },
     { path: 'test/add', component: AddTestComponent },
     { path: 'test/edit', component: EditTestComponent },
+    { path: 'test/lunch', component: LunchTestComponent },
     { path: 'manager/echec', component: ListEchecComponent },
     { path: 'manager/Rapport', component: RapportComponent },
     { path: 'profile', component: ProfileComponent ,canActivate: [UrlPermission] },

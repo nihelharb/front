@@ -2,38 +2,60 @@
 <head>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   
+
+
+
+
 </head>
 <div >
   <h2> Test Details</h2>
   
   <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
 
-  <table class="table table-striped">
+  <table class="table table-striped" >
     <thead>
     <tr>
-      <th class="hidden">nom</th>
+      <th >nom</th>
       <th>URL</th>
       <th>parametre</th>
       <th>temps_rep</th>      
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let test of tests| async"  >
-      <td class="hidden">{{test.nom}}</td>
+    
+    <tr *ngFor="let test of tests| async"  [ngClass] = "{'highlight':selected === 0 , 'highlightt' :   selected === 1} " >
+     
+      <td >{{test.nom}}</td>
       <td>{{test.url}}</td>
       <td>{{test.parametre}}</td>
       <td>{{test.temps_rep}}</td>
 
-      <td>
+      <td >
         <button class="btn btn-danger" (click)="deletetest(test)"> Delete</button>&nbsp;
-      
+    
       
         <a routerLink="edit" (click)="editTest(test)"  class="btn btn-danger" role="button" routerLinkActive="active">Edit</a>&nbsp;
        
-        <button class="btn btn-danger" (click)="Lancer(test)"> Lancer</button>&nbsp;
+ 
+        <button   class="btn btn-danger" (click)="LunchTest(test)"> lunch</button>&nbsp;
 
+
+   
+    
+    
 
         <!--button routerLink="edit" class="btn btn-danger" (click)="editTest(test)" style="margin-left: 20px;"> Edit</button-->
+      
       </td>
     </tr>
     <router-outlet></router-outlet>

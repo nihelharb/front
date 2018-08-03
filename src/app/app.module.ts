@@ -20,6 +20,7 @@ import { LunchTestComponent } from './component/lunch-test/lunch-test.component'
 import { AuthService } from './services/auth.service';
 import { AccountService } from './services/account.service';
 import { UrlPermission } from './urlPermission/url.permission';
+import { NgProgressModule } from 'ngx-progressbar';
 
 
 
@@ -36,6 +37,7 @@ import { UrlPermission } from './urlPermission/url.permission';
     RegisterComponent,
     ProfileComponent,
     LunchTestComponent,
+   
 
   ],
   imports: [
@@ -46,7 +48,7 @@ import { UrlPermission } from './urlPermission/url.permission';
     HttpModule,
     ReactiveFormsModule,
     
-    BrowserModule,HttpModule,FormsModule,
+    BrowserModule,HttpModule,FormsModule, NgProgressModule,
 
   ],
 

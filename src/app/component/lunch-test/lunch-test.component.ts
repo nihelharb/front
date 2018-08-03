@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { TestService } from '../../services/test.service';
+import { Test } from '../../model/Test';
 
 @Component({
   selector: 'app-lunch-test',
@@ -18,10 +19,5 @@ export class LunchTestComponent implements OnInit {
 
   }
 
-   lunch (){
-  
-    
-
-  }
 
 }

@@ -42,6 +42,11 @@ export class TestService {
         return this.http.delete(`${this.baseUrl}` + `/delete/{id}`, { responseType: 'text' });
   
       }*/
+
+      lunchTest(test: Test){
+        return this.http.post(`${this.baseUrl}`+`/lunch`,test) .map((resSampleData: Response) => resSampleData.json());
+      }
+
   
      
 }

@@ -13,7 +13,9 @@ import { Router } from '@angular/router';
 export class ListTestComponent implements OnInit {
   tests: Observable<Test[]>;
   listComponent: ListTestComponent;
-
+   selected:number;
+   date:String;
+   time:String;
 
 
 
@@ -33,7 +35,7 @@ export class ListTestComponent implements OnInit {
     this.TestService.deleteTest(test.id)
       .subscribe(
         data => {
-          console.log(data);
+         
           this.reloadData();
         },
         error => console.log(error));
@@ -41,11 +43,35 @@ export class ListTestComponent implements OnInit {
   
 
   editTest(test: Test): void {
-   localStorage.removeItem("editTestId");
+    localStorage.removeItem("editTestId");
     localStorage.setItem("editTestId", test.id.toString());
    
   };
   
+  LunchTest(test:Test): void {
+ 
+    this.TestService.lunchTest(test)
+    .subscribe(
+      data => {
+    
+     //   console.log(data);
+ 
+      /*  if(data=="success")
+        this.selected=1;
+        else {
+        this.selected=0;
+       
+        }*/
+    
+        this.reloadData();
+
+      },
+     
+      );
+
+    
+   };
   
+ 
 
 }
