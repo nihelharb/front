@@ -20,8 +20,9 @@ import { LunchTestComponent } from './component/lunch-test/lunch-test.component'
 import { AuthService } from './services/auth.service';
 import { AccountService } from './services/account.service';
 import { UrlPermission } from './urlPermission/url.permission';
-
-
+import { AdminPermission } from './urlPermission/admin.permission';
+import { ManagerPermission } from './urlPermission/manager.permission';
+//import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
@@ -47,10 +48,10 @@ import { UrlPermission } from './urlPermission/url.permission';
     ReactiveFormsModule,
     
     BrowserModule,HttpModule,FormsModule,
-
+   // ChartsModule ,
   ],
 
-  providers: [AuthService,AccountService,UrlPermission, TestService],
+  providers: [AuthService,AccountService,UrlPermission,ManagerPermission,AdminPermission, TestService],
  
   bootstrap: [AppComponent]
 })

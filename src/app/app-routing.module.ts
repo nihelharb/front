@@ -11,15 +11,17 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { UrlPermission } from './urlPermission/url.permission';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ManagerPermission } from './urlPermission/manager.permission';
+import { AdminPermission } from './urlPermission/admin.permission';
 
 const routes: Routes = [
  
-    { path: 'test', component: ListTestComponent },
-    { path: 'manager', component: ManagerComponent },
-    { path: 'test/add', component: AddTestComponent },
-    { path: 'test/edit', component: EditTestComponent },
-    { path: 'manager/echec', component: ListEchecComponent },
-    { path: 'manager/Rapport', component: RapportComponent },
+    { path: 'test', component: ListTestComponent,canActivate: [AdminPermission] },
+    { path: 'manager', component: ManagerComponent,canActivate: [ManagerPermission] },
+    { path: 'test/add', component: AddTestComponent ,canActivate: [AdminPermission]},
+    { path: 'test/edit', component: EditTestComponent,canActivate: [AdminPermission] },
+    { path: 'manager/echec', component: ListEchecComponent,canActivate: [ManagerPermission] },
+    { path: 'manager/Rapport', component: RapportComponent ,canActivate: [ManagerPermission]},
     { path: 'profile', component: ProfileComponent ,canActivate: [UrlPermission] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },

@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   user: User=new User();
   errorMessage:string;
+  currentUser ;
   constructor(private authService :AuthService, private router: Router) { }
 
 
@@ -24,8 +25,15 @@ export class LoginComponent implements OnInit {
 
     this.authService.logIn(this.user)
       .subscribe(data=>{
+        
+        //console.log(this.user.role);
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-        this.router.navigate(['/test']);
+        if (this.currentUser.role =="ADMIN") 
+        { this.router.navigate(['/test']);}
+        else if (this.currentUser.role=="MANAGER")
+         {this.router.navigate(['/manager']);}
+         //this.router.navigate(['/test']);
         },err=>{
         this.errorMessage="error :  Username or password is incorrect";
         }

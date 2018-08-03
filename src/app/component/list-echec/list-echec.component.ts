@@ -11,6 +11,7 @@ import{Historique} from '../../model/Historique';
 })
 export class ListEchecComponent implements OnInit {
   hist: Observable<Historique[]>;
+  hist_delet: Observable<Historique[]>;
   listComponent: ListEchecComponent;
 
 date :String ;
@@ -45,7 +46,5 @@ date :String ;
     this.getEchecs();
     
   }
-  
-  
 
 }
