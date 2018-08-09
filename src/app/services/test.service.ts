@@ -44,7 +44,7 @@ export class TestService {
       }*/
 
       lunchTest(test: Test){
-        return this.http.post(`${this.baseUrl}`+`/lunch`,test) .map((resSampleData: Response) => resSampleData.json());
+        return this.http.post(`${this.baseUrl}`+`/lunch`,test) ;
       }
 
   

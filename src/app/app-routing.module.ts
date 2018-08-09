@@ -17,6 +17,7 @@ import { AdminPermission } from './urlPermission/admin.permission';
 import { LunchTestComponent } from './component/lunch-test/lunch-test.component';
 
 
+
 const routes: Routes = [
  
     { path: 'test', component: ListTestComponent },
@@ -32,8 +33,10 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
   
     // otherwise redirect to profile
-    { path: '**', redirectTo: '/login' }
+    { path: '**', redirectTo: '/login' },
  
+   
+
 ];
  
 @NgModule({

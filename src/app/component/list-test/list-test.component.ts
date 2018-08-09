@@ -54,14 +54,14 @@ export class ListTestComponent implements OnInit {
     .subscribe(
       data => {
     
-     //   console.log(data);
+     console.log(data);
  
-      /*  if(data=="success")
+      if(data=="success")
         this.selected=1;
         else {
         this.selected=0;
        
-        }*/
+        }
     
         this.reloadData();
 

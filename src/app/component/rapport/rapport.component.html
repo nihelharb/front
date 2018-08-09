@@ -1,11 +1,9 @@
+
 <head>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!--script src="js/angular.piechart.min.js"></script>
-        <link href="css/angular.piechart.min.css" rel="stylesheet"/>
-        <piechart ng-model="vm.data"></piechart-->    
-      </head>
-    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
     <h3>list historique</h3>
     <div style="width: 300px;">
       <form (ngSubmit)="onSubmit()">
@@ -39,23 +37,9 @@
       </tr>
     </td>
         </tbody>
-
-        <!--div style="display: block">
-          <canvas mdbChart
-              [chartType]="chartType"
-              [data]="chartData"
-              [labels]="chartLabels"
-              [colors]="chartColors"
-              [options]="chartOptions"
-              [legend]="true"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)">
-          </canvas>
-      </div-->
-<div style="widows: 950px">
-    <canvas id ="piechart" width="650" height="273" class ="chartjs-render-monitor" ></canvas>
-
-</div>
+  
+        <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+        <div id="chartContainer1" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
 
       <router-outlet></router-outlet>
   

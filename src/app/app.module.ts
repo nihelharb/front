@@ -23,8 +23,14 @@ import { UrlPermission } from './urlPermission/url.permission';
 
 import { AdminPermission } from './urlPermission/admin.permission';
 import { ManagerPermission } from './urlPermission/manager.permission';
-//import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { CommonModule } from '@angular/common';
+import 'Chart.js';
 
+
+
+//import  { Chart } from 'c:/Users/asus/Downloads/RestClient/node_modules/@types/chart.js/index';  
+
+//import { ChartModule } from 'chart.js/src/chart.js';
 
 
 @NgModule({
@@ -40,7 +46,8 @@ import { ManagerPermission } from './urlPermission/manager.permission';
     RegisterComponent,
     ProfileComponent,
     LunchTestComponent,
-   
+
+
 
   ],
   imports: [
@@ -50,12 +57,7 @@ import { ManagerPermission } from './urlPermission/manager.permission';
     HttpClientModule,
     HttpModule,
     ReactiveFormsModule,
-    
-
-    BrowserModule,HttpModule,FormsModule,
-   // ChartsModule ,
-
-    BrowserModule,HttpModule,FormsModule
+    CommonModule,
 
   ],
 
