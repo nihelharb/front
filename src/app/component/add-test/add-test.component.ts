@@ -43,7 +43,7 @@ export class AddTestComponent implements OnInit {
         data => console.log(data), error => console.log(error));
     this.test = new Test();
 
-    //this.router.navigate(['test']);
+    this.router.navigate(['/index']);
 
   }
   

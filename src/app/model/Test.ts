@@ -6,5 +6,7 @@ export class Test {
     temps_rep:String;
     resultat_attendu:String;
     emails:String;
+    date_last_lunch:String;
+    time_last_lunch:String;
 
 }

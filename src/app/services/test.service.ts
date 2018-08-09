@@ -10,7 +10,9 @@ export class TestService {
       baseUrl: string = 'http://localhost:8080/api/test'
 
   getTests() : Observable<any>{
-          return this.http.get(`${this.baseUrl}`);
+       
+    
+          return this.http.get(`http://localhost:8080/api/test_date`);
       
       }
 
@@ -44,7 +46,8 @@ export class TestService {
       }*/
 
       lunchTest(test: Test){
-        return this.http.post(`${this.baseUrl}`+`/lunch`,test) .map((resSampleData: Response) => resSampleData.json());
+       
+        return this.http.post(`${this.baseUrl}`+`/lunch`,test);
       }
 
   

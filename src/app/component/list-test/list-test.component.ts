@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Test } from '../../model/Test';
 import { TestService } from '../../services/Test.service';
 import { Router } from '@angular/router';
+import { resp } from '../../model/resp';
 
 @Component({
   selector: 'list-test',
@@ -13,10 +14,16 @@ import { Router } from '@angular/router';
 export class ListTestComponent implements OnInit {
   tests: Observable<Test[]>;
   listComponent: ListTestComponent;
-   selected:number;
-   date:String;
-   time:String;
+   selected:number=0;
+   public currentCompany;
+   respt:resp[];
 
+
+
+   public selectCompany(event: any, item: any) {
+    this.selected=0;
+    this.currentCompany = item.nom;
+  }
 
 
  constructor(private TestService: TestService,public router:Router) { }
@@ -25,9 +32,11 @@ export class ListTestComponent implements OnInit {
     this.reloadData();
   }
 
-  reloadData() {
-
+  reloadData() { 
+    
     this.tests = this.TestService.getTests();
+ 
+
   }
 
   deletetest(test:Test) {
@@ -49,21 +58,19 @@ export class ListTestComponent implements OnInit {
   };
   
   LunchTest(test:Test): void {
- 
     this.TestService.lunchTest(test)
     .subscribe(
       data => {
-    
-     //   console.log(data);
- 
-      /*  if(data=="success")
+     
+      this.reloadData();
+       if(data=="success")
         this.selected=1;
         else {
-        this.selected=0;
+        this.selected=-1;
        
-        }*/
+        }
     
-        this.reloadData();
+        
 
       },
      

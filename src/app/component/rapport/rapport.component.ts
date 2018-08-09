@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HistoriqueService } from '../../services/historique.service';
 import { Router } from '@angular/router';
 import{Historique} from '../../model/Historique';
-import * as Chart from 'Chart.js'
+//import * as Chart from 'Chart.js'
 
 @Component({
   selector: 'rapport',
@@ -19,14 +19,14 @@ export class RapportComponent implements OnInit {
   dateF :String ;
   nom :String ;
 
-pieChart : any ;
+//pieChart : any ;
 
 
-  myArray = ['nom du test'    , 'nombre de tests effecuées', 'nombre d echec     ', 'temps de reponse moyenne(ms)'];
+ // myArray = ['nom du test'    , 'nombre de tests effecuées', 'nombre d echec     ', 'temps de reponse moyenne(ms)'];
   constructor(private HistoriqueService: HistoriqueService,public router:Router) { }
 
 
-
+/*
   ngViewPieChart(){
 this.pieChart = new Chart('pieChart',{
 type : 'pie',
@@ -52,7 +52,7 @@ options :{
 }
 
 
-  /*
+  
   public chartType:string = 'pie';
 
   public chartData:Array<any> = [300, 50, 100, 40, 120];
