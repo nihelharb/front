@@ -25,21 +25,24 @@
   <table class="table table-striped" >
     <thead>
     <tr>
-      <th >nom</th>
+      <th >Nom</th>
       <th>URL</th>
-      <th>parametre</th>
-      <th>temps_rep</th>      
+      
+      <th>Temps_rep</th>    
+      <th>Options</th>  
+      <th>Date_last_lunch </th> 
+      <th>Time_last_lunch </th> 
     </tr>
     </thead>
     <tbody>
-    
-    <tr *ngFor="let test of tests| async"  [ngClass] = "{'highlight':selected === 0 , 'highlightt' :   selected === 1} " >
+     
+    <tr *ngFor="let test of tests| async"  (click)="selectCompany($event, test)"  [class.highlight]="test.nom === currentCompany && selected === -1"   [class.highlightt]="test.nom === currentCompany && selected === 1" >
      
       <td >{{test.nom}}</td>
       <td>{{test.url}}</td>
-      <td>{{test.parametre}}</td>
+    
       <td>{{test.temps_rep}}</td>
-
+      
       <td >
         <button class="btn btn-danger" (click)="deletetest(test)"> Delete</button>&nbsp;
     
@@ -49,14 +52,9 @@
  
         <button   class="btn btn-danger" (click)="LunchTest(test)"> lunch</button>&nbsp;
 
-
-   
-    
-    
-
-        <!--button routerLink="edit" class="btn btn-danger" (click)="editTest(test)" style="margin-left: 20px;"> Edit</button-->
-      
       </td>
+      <td>{{test.date_last_lunch}}</td>
+      <td>{{test.time_last_lunch}}</td>
     </tr>
     <router-outlet></router-outlet>
 

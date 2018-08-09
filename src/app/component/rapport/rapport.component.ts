@@ -5,6 +5,8 @@ import { HistoriqueService } from '../../services/historique.service';
 import { Router } from '@angular/router';
 import * as CanvasJS from './Canvasjs.min.js';
 
+import{Historique} from '../../model/Historique';
+//import * as Chart from 'Chart.js'
 
 @Component({
   selector: 'rapport',
@@ -19,12 +21,47 @@ export class RapportComponent implements OnInit {
   dateF :String ;
   nom :String ;
 
+//pieChart : any ;
+
+
+ // myArray = ['nom du test'    , 'nombre de tests effecuées', 'nombre d echec     ', 'temps de reponse moyenne(ms)'];
+  constructor(private HistoriqueService: HistoriqueService,public router:Router) { }
+
+
+/*
+  ngViewPieChart(){
+this.pieChart = new Chart('pieChart',{
+type : 'pie',
+data : {
+  label : ['Red', 'Green', 'Yellow', 'Grey', 'Dark Grey'] ,
+  datasets : [{
+    label : '# from votes',
+    data : [300, 50, 100, 40, 120],
+    backgroundColor: ['rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.1)'],
+    BorderWidth: 1
+  }]
+},
+options :{
+  title : {
+    text :"Pie Chart",
+    display : true ,
+  },
+
+
+  
+}
+});
+}
+
+
+  
+  public chartType:string = 'pie';
 
 
 
   myArray = ['nom du test   '  , 'nombre de tests effecuées', 'nombre d echec     ','nombre de tests en retard', 'temps de reponse moyenne(ms)'];
   constructor(private HistoriqueService: HistoriqueService,public router:Router) { }
- 
+ */
    ngOnInit() {
    }
  
@@ -186,5 +223,6 @@ function toggleDataSeries(e) {
 
 
 }
+
 
 }

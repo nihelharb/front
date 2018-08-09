@@ -15,25 +15,32 @@ import { RegisterComponent } from './component/register/register.component';
 import { ManagerPermission } from './urlPermission/manager.permission';
 import { AdminPermission } from './urlPermission/admin.permission';
 import { LunchTestComponent } from './component/lunch-test/lunch-test.component';
+import { IndexComponent } from './component/index/index.component';
+
 
 
 
 const routes: Routes = [
- 
+
+    { path: 'index', component: IndexComponent},
     { path: 'test', component: ListTestComponent },
     { path: 'manager', component: ManagerComponent },
-    { path: 'test/add', component: AddTestComponent },
-    { path: 'test/edit', component: EditTestComponent },
-    { path: 'test/lunch', component: LunchTestComponent },
+    { path: 'index/add', component: AddTestComponent },
+    { path: 'index/edit', component: EditTestComponent },
+    { path: 'index/lunch', component: LunchTestComponent },
     { path: 'manager/echec', component: ListEchecComponent },
     { path: 'manager/Rapport', component: RapportComponent },
 
     { path: 'profile', component: ProfileComponent ,canActivate: [UrlPermission] },
-    { path: 'login', component: LoginComponent },
+   // { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
   
     // otherwise redirect to profile
+<<<<<<< HEAD
     { path: '**', redirectTo: '/login' },
+=======
+    //{ path: '**', redirectTo: '/login' }
+>>>>>>> 514ffca9d3fb4db806c601f29d47d1145a8c5f48
  
    
 

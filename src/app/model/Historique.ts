@@ -7,7 +7,8 @@ export class Historique {
     resultat_attendu:String;
     emails:String;
     temps_rep_reel:String;
-    date:Date;
+    date:String;
+    time:String;
     resultat:String;
 
 }

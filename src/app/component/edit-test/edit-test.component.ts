@@ -49,8 +49,8 @@ export class EditTestComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          console.log("c bon");
-          this.router.navigate(['test']);
+         
+          this.router.navigate(['index']);
         },
         error => {
           alert(error);
