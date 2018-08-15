@@ -23,9 +23,9 @@ import { UrlPermission } from './urlPermission/url.permission';
 
 import { AdminPermission } from './urlPermission/admin.permission';
 import { ManagerPermission } from './urlPermission/manager.permission';
-<<<<<<< HEAD
+
 import { CommonModule } from '@angular/common';
-import 'Chart.js';
+
 import { IndexComponent } from './component/index/index.component';
 import { Index2Component } from './component/index2/index2.component';
 
@@ -44,15 +44,15 @@ import { Index2Component } from './component/index2/index2.component';
     RegisterComponent,
     ProfileComponent,
     LunchTestComponent,
-<<<<<<< HEAD
 
 
-=======
+
+
+
     IndexComponent,
     Index2Component,
  
    
->>>>>>> 514ffca9d3fb4db806c601f29d47d1145a8c5f48
 
   ],
   imports: [

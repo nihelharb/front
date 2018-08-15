@@ -23,5 +23,8 @@ getHistorique() : Observable<any>{
     return this.http.get(`${this.baseUrl}/${nom}/${dateD}/${dataF}`);
 
   }
+  getTime(nom : String ,dateD : String ,dataF : String):Observable<any>{
+    return this.http.get(`${this.baseUrl}`+/temps/+`${nom}/${dateD}/${dataF}`);
+   }
  
 }

@@ -6,6 +6,7 @@ import { Test } from '../../model/Test';
 import { TestService } from '../../services/Test.service';
 import { Router } from '@angular/router';
 import { resp } from '../../model/resp';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -29,10 +30,24 @@ export class IndexComponent implements OnInit {
   }
 
 
- constructor(private TestService: TestService,public router:Router) { }
+ constructor(public authService: AuthService,private TestService: TestService,public router:Router) { }
 
   ngOnInit() {
     this.reloadData();
+  }
+
+
+
+  
+  logOut() {
+    this.authService.logOut()
+      .subscribe(
+        data => {
+          this.router.navigate(['/login']);
+        },
+        error => {
+
+        });
   }
 
   reloadData() { 

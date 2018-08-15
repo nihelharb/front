@@ -46,12 +46,7 @@ export class TestService {
       }*/
 
       lunchTest(test: Test){
-<<<<<<< HEAD
         return this.http.post(`${this.baseUrl}`+`/lunch`,test) ;
-=======
-       
-        return this.http.post(`${this.baseUrl}`+`/lunch`,test);
->>>>>>> 514ffca9d3fb4db806c601f29d47d1145a8c5f48
       }
 
   

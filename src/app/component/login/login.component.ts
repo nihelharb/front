@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
         if (this.currentUser.role =="ADMIN") 
-        { this.router.navigate(['/test']);}
+        { this.router.navigate(['/index']);}
         else if (this.currentUser.role=="MANAGER")
-         {this.router.navigate(['/manager']);}
+         {this.router.navigate(['/index_Manager']);}
          //this.router.navigate(['/test']);
         },err=>{
         this.errorMessage="error :  Username or password is incorrect";

@@ -1,3 +1,19 @@
 @import "assets/dist/css/style.css";
 @import "assets/node_modules/morrisjs/morris.css";
 @import "assets/dist/css/pages/dashboard1.css";
+
+@import "assets/node_modules/c3-master/c3.min.css";
+@import "assets/dist/css/pages/dashboard1.css";
+
+ /**template 2**/
+
+
+
+
+
+@import "assets/dist/vendors_template2/font-awesome/css/font-awesome.min.css";
+@import "assets/dist/vendors_template2/iCheck/skins/flat/green.css";
+@import "assets/dist/vendors_template2/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css";
+
+@import "assets/dist/vendors_template2/jqvmap/dist/jqvmap.min.css";
+@import "assets/dist/vendors_template2/bootstrap-daterangepicker/daterangepicker.css";

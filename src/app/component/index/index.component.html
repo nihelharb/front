@@ -78,7 +78,7 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="glyphicon glyphicon-log-in" (click)="logOut()"></span> LogOut</a></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -106,7 +106,7 @@
                     <ul id="sidebarnav">
                            
                         <li> <a routerLink="/index" (click)="editTest(test)"  class="waves-effect waves-dark" aria-expanded="false" routerLinkActive="active" ><i class="fa fa-tachometer"></i><span class="hide-menu">List WS</span></a></li>
-                        <li> <a  routerLink="add" class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Add Test</span></a></li>
+                        <li> <a  routerLink="add" class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"  routerLinkActive="active"  ><i class="fa fa-user-circle-o"></i><span class="hide-menu">Add Test</span></a></li>
 
                      
                         <div class="text-center m-t-30">

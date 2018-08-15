@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+         
             "outputPath": "dist/RestClient",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -39,7 +40,49 @@
               "src/dist/js/perfect-scrollbar.jquery.min.js",
               "src/assets/node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/node_modules/popper/popper.min.js",
-              "src/assets/node_modules/jquery/jquery-3.2.1.min.js"
+              "src/assets/node_modules/jquery/jquery-3.2.1.min.js",
+
+            
+       
+        "src/assets/dist/vendors_template2/jquery/dist/jquery.min.js",
+       
+        "src/assets/dist/vendors_template2/bootstrap/dist/js/bootstrap.min.js",
+      
+        "src/assets/dist/vendors_template2/fastclick/lib/fastclick.js",
+     
+        "src/assets/dist/vendors_template2/nprogress/nprogress.js",
+  
+        "src/assets/dist/vendors_template2/Chart.js/dist/Chart.min.js",
+   
+        "src/assets/dist/vendors_template2/gauge.js/dist/gauge.min.js",
+   
+        "src/assets/dist/vendors_template2/bootstrap-progressbar/bootstrap-progressbar.min.js",
+       
+        "src/assets/dist/vendors_template2/iCheck/icheck.min.js",
+     
+      "src/assets/dist/vendors_template2/skycons/skycons.js",
+      
+       "src/assets/dist/vendors_template2/Flot/jquery.flot.js",
+      "src/assets/dist/vendors_template2/Flot/jquery.flot.pie.js",
+      "src/assets/dist/vendors_template2/Flot/jquery.flot.time.js",
+       "src/assets/dist/vendors_template2/Flot/jquery.flot.stack.js",
+      "src/assets/dist/vendors_template2/Flot/jquery.flot.resize.js",
+  
+        "src/assets/dist/vendors_template2/flot.orderbars/js/jquery.flot.orderBars.js",
+      "src/assets/dist/vendors_template2/flot-spline/js/jquery.flot.spline.min.js",
+      "src/assets/dist/vendors_template2/flot.curvedlines/curvedLines.js",
+       "src/assets/dist/vendors_template2/DateJS/build/date.js",
+  
+     "src/assets/dist/vendors_template2/jqvmap/dist/jquery.vmap.js",
+        "src/assets/dist/vendors_template2/jqvmap/dist/maps/jquery.vmap.world.js",
+        "src/assets/dist/vendors_template2/jqvmap/examples/js/jquery.vmap.sampledata.js",
+    
+        "src/assets/dist/vendors_template2/moment/min/moment.min.js",
+     "src/assets/dist/vendors_template2/bootstrap-daterangepicker/daterangepicker.js",
+     "src/assets/dist/build/js/custom.min.js"
+    
+ 
+      
             ]
           },
           "configurations": {
@@ -138,15 +181,7 @@
       }
     }
   },
-  "defaultProject": "RestClient",
-  "styles": [
-  "../node_modules/bootstrap/dist/css/bootstrap.css",
-  "styles.scss"
-],
-"scripts": [
-  "../node_modules/jquery/dist/jquery.js",
-  "../node_modules/tether/dist/js/tether.js",
-  "../node_modules/bootstrap/dist/js/bootstrap.js"
-]
+  "defaultProject": "RestClient"
+
 
 }

@@ -61,16 +61,10 @@ export class ListTestComponent implements OnInit {
     this.TestService.lunchTest(test)
     .subscribe(
       data => {
-<<<<<<< HEAD
     
      console.log(data);
  
       if(data=="success")
-=======
-     
-      this.reloadData();
-       if(data=="success")
->>>>>>> 514ffca9d3fb4db806c601f29d47d1145a8c5f48
         this.selected=1;
         else {
         this.selected=-1;
