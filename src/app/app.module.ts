@@ -26,18 +26,9 @@ import { ManagerPermission } from './urlPermission/manager.permission';
 <<<<<<< HEAD
 import { CommonModule } from '@angular/common';
 import 'Chart.js';
-=======
 import { IndexComponent } from './component/index/index.component';
 import { Index2Component } from './component/index2/index2.component';
 
-//import { ChartsModule } from 'ng2-charts/ng2-charts';
->>>>>>> 514ffca9d3fb4db806c601f29d47d1145a8c5f48
-
-
-
-//import  { Chart } from 'c:/Users/asus/Downloads/RestClient/node_modules/@types/chart.js/index';  
-
-//import { ChartModule } from 'chart.js/src/chart.js';
 
 
 @NgModule({
