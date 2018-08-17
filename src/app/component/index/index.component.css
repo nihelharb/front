@@ -12,6 +12,21 @@
     background-color: green !important; 
     font-weight: bold;
   }
+  .highlighttt{
+    
+   
+    background-color: pink !important; 
+    font-weight: bold;
+    
+  }
+  .highlightttt{
+    
+   
+    background-color: green !important; 
+    font-weight: bold;
+  }
+  
+
   
   .highlighted{
     
@@ -20,3 +35,8 @@
     font-weight: bold;
     
   }
+  .ng-progress{
+
+    background-color:black !important;  
+    
+    }

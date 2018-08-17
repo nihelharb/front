@@ -5,10 +5,11 @@ import {AppComponent} from "../app.component";
 
 @Injectable({providedIn : "root"})
 export class AccountService {
+  baseUrl: string = 'http://localhost:8080/account/register';
   constructor(public http: Http) { }
 
   createAccount(user:User){
-    return this.http.post(AppComponent.API_URL+'/account/register',user)
+    return this.http.post(this.baseUrl,user)
       .map(resp=>resp.json());
   }
 }

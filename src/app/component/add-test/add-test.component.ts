@@ -44,7 +44,7 @@ export class AddTestComponent implements OnInit {
     this.test = new Test();
 
     this.router.navigate(['/index']);
-
+   this.reloadData();
   }
   
 

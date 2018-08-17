@@ -3,6 +3,9 @@ import { HistoriqueService } from '../../services/historique.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import * as CanvasJS from './Canvasjs.min.js';
+import { Test } from '../../model/Test';
+import { TestService } from '../../services/test.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-index2',
@@ -11,12 +14,29 @@ import * as CanvasJS from './Canvasjs.min.js';
 })
 export class Index2Component implements OnInit {
   rapport: Observable<String[]>;
-
+tests: Observable<Test[]>;
   dateD :String ;
   dateF :String ;
   nom :String ;
-  constructor(private HistoriqueService: HistoriqueService,public router:Router) { }
+  testForm: FormGroup;
+
+
+  constructor(private fb: FormBuilder,private HistoriqueService: HistoriqueService,public router:Router,private TestService :TestService) { }
   myArray = ['nombre de tests effecuées', 'nombre d echec     ','nombre de tests en retard', 'temps de reponse moyenne(ms)'];
+
+  reloadData() { 
+    
+    this.tests = this.TestService.getTests();
+   
+
+  }
+
+  onTestSelect(event:any){
+    this.nom=event.target.value;
+console.log(this.nom);
+    
+      
+  }
 
 
   private getRapportSS() {
@@ -43,6 +63,7 @@ export class Index2Component implements OnInit {
     
   }
   onSubmit(){
+
     this.getRapportSS();
      
     this.HistoriqueService.getRapport(this.nom,this.dateD,this.dateF)
@@ -122,15 +143,6 @@ console.log(dataPoints);
             color: "#F08080",
             dataPoints: dataPoints
         
-                /**{ x: new Date("2017-08-01"), y: 610 },
-                { x: new Date("2017-08-08"), y: 20 },**/
-                
- //for(let key of data1){
-    
-        
-//  }
-
-            
         }]
     });
     chart.render();
@@ -140,7 +152,10 @@ console.log(dataPoints);
    })
   }
   ngOnInit() {
-
+    this.testForm = this.fb.group({
+        testControl: [this.reloadData()]
+      });
+   
   }
 
 }

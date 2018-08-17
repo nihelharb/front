@@ -8,17 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
-    <!-- Custom CSS -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   
+    <title>Soliam test Web Service</title>
+   
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -40,19 +32,10 @@
                 <!-- ============================================================== -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                      
+                         <span>
+                           
+                         <img src="../../assets/images/soliamlogo.png" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -95,7 +78,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"></span>
+                <span><img src="../../assets/images/soliamlogo.png" alt="elegant admin template"></span>
                 <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
                 <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             </div>
@@ -157,12 +140,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">--------</h4>
+                                <h4 class="card-title">--------</h4> <button class="btn btn-success" (click)="lunchAll()" > lunchAll</button>
                                 <h6 class="card-subtitle"><code></code></h6>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" 	
+                                     data-toggle="table"
+                                    data-search="true"
+                                    data-filter-control="true" 
+                                    data-show-export="true"
+                                    data-click-to-select="true"
+                                    data-toolbar="#toolbar">
                                         <thead>
                                             <tr>
+                                            <th data-field="state" data-checkbox="true"></th>
+                                               <th>id</th>
                                               <th >Nom</th>
                                               <th>URL</th>
                                               <th>Resultat attendu</th>
@@ -173,8 +164,11 @@
                                             </tr>
                                             </thead>
                                         <tbody>
-                                            <tr *ngFor="let test of tests| async"  (click)="selectCompany($event, test)"  [class.highlight]="test.nom === currentCompany && selected === -1"   [class.highlightt]="test.nom === currentCompany && selected === 1" >
-                                                <td >{{test.nom}}</td>
+                                            <tr *ngFor="let test of tests| async  ; let i = index "  (click)="selectCompany($event, test)"  [class.highlighttt]="selectedrow[i] === -1"   [class.highlightttt]= "selectedrow[i] === 1 " >
+                                                
+                                                <td class="bs-checkbox "><input  name="btSelectItem" type="checkbox" (change)="checkbox(test,$event,i)"></td>
+                                                <td>{{ i }} </td>
+                                                <td > {{test.nom}}</td>
                                                 <td>{{test.url}}</td>
                                               <th > <b>{{test.resultat_attendu}}</b> </th> 
                                                 <td>{{test.temps_rep}}</td>
@@ -185,7 +179,8 @@
                                                     <a routerLink="edit" (click)="editTest(test)"  class="btn btn-success" role="button" routerLinkActive="active">Edit</a>&nbsp;
                                                 
                                              
-                                                    <button   class="btn btn-success" (click)="LunchTest(test)"> lunch</button>&nbsp;
+                                                    <button  class="btn btn-success" (click)="LunchTest(test,i)" > lunch</button>&nbsp;
+                                                    
                                             
                                                   </td>
                                                   <td>{{test.date_last_lunch}}</td>
@@ -198,6 +193,10 @@
                                           
                                         </tbody>
                                     </table>
+
+                                    <ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1"
+                                                    [speed]="100" [showSpinner]="true" [direction]="'LeftTorightIncreased'"
+                                                    [color]="'red'" [trickleSpeed]="250" [thick]="false" [ease]="'linear'" ></ng-progress>
                                 </div>
                             </div>
                         </div>

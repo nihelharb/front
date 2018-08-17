@@ -10,6 +10,7 @@ body, html {
  /* background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
 }
 .bgr-img{
+  
   background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
 
@@ -111,7 +112,7 @@ body, html {
 
 .btn.btn-signin {
   /*background-color: #4d90fe; */
-  background-color: rgb(104, 145, 162);
+  background-color: rgb(31, 116, 23);
   /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
   padding: 0px;
   font-weight: 700;

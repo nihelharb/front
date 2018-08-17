@@ -2,8 +2,8 @@ export class Test {
     id: String;
     nom: String;
     url: String;
-    parametre:String;
-    temps_rep:String;
+    temps_rep :String;
+    parametre :String;
     resultat_attendu:String;
     emails:String;
     date_last_lunch:String;

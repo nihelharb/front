@@ -6,7 +6,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddTestComponent } from './component/add-test/add-test.component';
 import { EditTestComponent } from './component/edit-test/edit-test.component';
 import {ListTestComponent} from "./component/list-test/list-test.component";
-import {ManagerComponent} from "./component/manager/manager.component";
 import {ListEchecComponent} from "./component/list-echec/list-echec.component";
 import {RapportComponent} from "./component/rapport/rapport.component";
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +14,6 @@ import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
-import { ProfileComponent } from './component/profile/profile.component';
 import { LunchTestComponent } from './component/lunch-test/lunch-test.component';
 import { AuthService } from './services/auth.service';
 import { AccountService } from './services/account.service';
@@ -28,6 +26,9 @@ import { CommonModule } from '@angular/common';
 
 import { IndexComponent } from './component/index/index.component';
 import { Index2Component } from './component/index2/index2.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgProgressModule } from 'ngx-progressbar';
+
 
 
 
@@ -37,12 +38,10 @@ import { Index2Component } from './component/index2/index2.component';
     ListTestComponent,
     AddTestComponent,
     EditTestComponent,
-    ManagerComponent,
     ListEchecComponent,
     RapportComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
     LunchTestComponent,
 
 
@@ -63,6 +62,8 @@ import { Index2Component } from './component/index2/index2.component';
     HttpModule,
     ReactiveFormsModule,
     CommonModule,
+    BrowserAnimationsModule,
+    NgProgressModule
 
   ],
 

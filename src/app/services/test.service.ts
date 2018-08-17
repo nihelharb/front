@@ -39,6 +39,11 @@ export class TestService {
     deleteTest(id: String): Observable<any> {
       return this.http.delete(`${this.baseUrl}`+`/delete/${id}`, { responseType: 'text' });
     }
+    
+    lunchAllTests(): Observable<any>{
+      return this.http.post(`${this.baseUrl}`+`/lunchAll`, { responseType: 'text' }) ;
+    }
+
      /*    deleteTest(id: String) {
         //return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
         return this.http.delete(`${this.baseUrl}` + `/delete/{id}`, { responseType: 'text' });
